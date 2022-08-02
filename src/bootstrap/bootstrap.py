@@ -437,8 +437,11 @@ class RustBuild(object):
             filename = "cargo-{}-{}{}".format(rustc_channel, self.build,
                                             tarball_suffix)
             self._download_component_helper(filename, "cargo", tarball_suffix)
-            self.fix_bin_or_dylib("{}/bin/cargo".format(bin_root))
 
+            filename = "rust-src-{}{}".format(rustc_channel, tarball_suffix)
+            self._download_component_helper(filename, "rust-src", tarball_suffix)
+
+            self.fix_bin_or_dylib("{}/bin/cargo".format(bin_root))
             self.fix_bin_or_dylib("{}/bin/rustc".format(bin_root))
             self.fix_bin_or_dylib("{}/bin/rustdoc".format(bin_root))
             lib_dir = "{}/lib".format(bin_root)

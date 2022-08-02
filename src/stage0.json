@@ -360,6 +360,7 @@
     "dist/2022-07-21/rustfmt-nightly-x86_64-unknown-linux-musl.tar.gz": "91ed27676b13193eecb93839c0c748e667e869f091de88cea4183c51870efbe8",
     "dist/2022-07-21/rustfmt-nightly-x86_64-unknown-linux-musl.tar.xz": "ccb0245ac982c34c9db9f6ffc3c30769e2b62637a18d88dc30a4ed3c1922fa7e",
     "dist/2022-07-21/rustfmt-nightly-x86_64-unknown-netbsd.tar.gz": "54344a42f2fca291c0c10f84386135e2797c9b81519eab0c6db633a95c109f20",
-    "dist/2022-07-21/rustfmt-nightly-x86_64-unknown-netbsd.tar.xz": "4a276eac1bdace68484b49104b8bb2c48f93a775404f2bd29e9c3d4c6ce7367f"
+    "dist/2022-07-21/rustfmt-nightly-x86_64-unknown-netbsd.tar.xz": "4a276eac1bdace68484b49104b8bb2c48f93a775404f2bd29e9c3d4c6ce7367f",
+    "dist/2022-07-16/rust-src-beta.tar.xz": "e08688ae0c5c944698100114d36750ce2653bfa98afc00bc0f3affa280325958"
   }
 }
