@@ -10,7 +10,13 @@ edition = "2021"
 
 [dependencies]
 core = { path = "../core" }
+
+[target.'cfg(not(target_os = "theseus"))'.dependencies]
 compiler_builtins = { version = "0.1.40", features = ['rustc-dep-of-std'] }
+
+[target.'cfg(target_os = "theseus")'.dependencies]
+# Since Theseus doesn't use libc, it requires mem functions from compiler_builtins
+compiler_builtins = { version = "0.1.40", features = ['rustc-dep-of-std', 'mem'] }
 
 [dev-dependencies]
 rand = "0.7"
