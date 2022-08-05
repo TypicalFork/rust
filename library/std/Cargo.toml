@@ -42,20 +42,17 @@ fortanix-sgx-abi = { version = "0.3.2", features = ['rustc-dep-of-std'] }
 [target.'cfg(target_os = "hermit")'.dependencies]
 hermit-abi = { version = "0.2.0", features = ['rustc-dep-of-std'] }
 
+# theseus does not use libc
 [target.'cfg(not(target_os = "theseus"))'.dependencies]
-# Theseus doesn't use libc
 libc = { version = "0.2.126", default-features = false, features = ['rustc-dep-of-std'] }
 compiler_builtins = { version = "0.1.73" }
 
 [target.'cfg(target_os = "theseus")'.dependencies]
 libtheseus = { path = "../../../Theseus/libtheseus" }
-# Since Theseus doesn't use libc, it requires mem functions from compiler_builtins
 compiler_builtins = { version = "0.1.73", features = ['rustc-dep-of-std', 'mem'] }
 
 [target.wasm32-wasi.dependencies]
 wasi = { version = "0.11.0", features = ['rustc-dep-of-std'], default-features = false }
-
-[patch.crates-io]
 
 [features]
 backtrace = [

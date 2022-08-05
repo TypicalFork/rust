@@ -239,8 +239,7 @@ dependencies = [
 [[package]]
 name = "bincode"
 version = "2.0.0-rc.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f609ceb2c41b0d0277314a789ef0e7eb14593d5485f7c67320bed3924ebb1b33"
+source = "git+https://github.com/bincode-org/bincode#3a4f2991ff952535b21078d3371e112d8a1f4ab4"
 dependencies = [
  "serde",
 ]
@@ -1027,8 +1026,6 @@ checksum = "9a21fa21941700a3cd8fcb4091f361a6a712fac632f85d9f487cc892045d55c6"
 [[package]]
 name = "core2"
 version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b49ba7ef1ad6107f8824dbe97de947cbaac53c44e7f9756a1fba0d37c1eec505"
 dependencies = [
  "memchr",
 ]
@@ -1509,6 +1506,7 @@ version = "0.1.0"
 dependencies = [
  "fs_node",
  "hashbrown 0.11.2",
+ "path",
  "root",
 ]
 
@@ -1909,8 +1907,7 @@ dependencies = [
 [[package]]
 name = "getopts"
 version = "0.2.21"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "14dbbfd5c71d70241ecf9e6f13737f7b5ce823821063188d7e46c41d371eebd5"
+source = "git+https://github.com/theseus-os/getopts#da1e04828d3ecd6adc90e2da61e2e3cccc7ca97c"
 dependencies = [
  "rustc-std-workspace-core",
  "rustc-std-workspace-std",
@@ -6922,8 +6919,10 @@ checksum = "6a02e4885ed3bc0f2de90ea6dd45ebcbb66dacffe03547fadbb0eeae2770887d"
 [[package]]
 name = "volatile"
 version = "0.2.7"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f6b06ad3ed06fef1713569d547cdbdb439eafed76341820fb0e0344f29a41945"
+source = "git+https://github.com/theseus-os/volatile#73a307a2906c9f67fa4b951ce858d642c2fa669b"
+dependencies = [
+ "zerocopy",
+]
 
 [[package]]
 name = "volatile"
@@ -7149,3 +7148,34 @@ dependencies = [
  "syn",
  "synstructure",
 ]
+
+[[patch.unused]]
+name = "libc"
+version = "0.2.127"
+
+[[patch.unused]]
+name = "smoltcp"
+version = "0.5.0"
+source = "git+https://github.com/m-labs/smoltcp?rev=0fedb1db9aa26712830822dd61f065deaa34d611#0fedb1db9aa26712830822dd61f065deaa34d611"
+
+[[patch.unused]]
+name = "spin"
+version = "0.9.0"
+source = "git+https://github.com/theseus-os/spin-rs#f6ffb27cb15ba30bc088c477550cb600db25a3a3"
+
+[[patch.unused]]
+name = "backtrace"
+version = "0.3.64"
+
+[[patch.unused]]
+name = "region"
+version = "3.0.0"
+
+[[patch.unused]]
+name = "thiserror_core2"
+version = "2.0.0"
+
+[[patch.unused]]
+name = "wasmparser"
+version = "0.81.0"
+source = "git+https://github.com/theseus-os/wasm-tools?branch=no-std-wasmparser#7b0eb0d074606c8a49027e60e452862f5fe183b4"
