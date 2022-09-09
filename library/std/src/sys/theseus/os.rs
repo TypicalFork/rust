@@ -84,7 +84,13 @@ impl StdError for JoinPathsError {
 }
 
 pub fn current_exe() -> io::Result<PathBuf> {
-    unsupported()
+    let task = libtheseus::task::get_my_current_task()
+        .ok_or_else(|| io::Error::new(io::ErrorKind::Other, "couldn't get current task"))?;
+    let app_crate = task.app_crate.as_ref().ok_or_else(|| {
+        io::Error::new(io::ErrorKind::Other, "task didn't contain reference to app crate")
+    })?;
+    let path = app_crate.lock_as_ref().object_file.lock().get_absolute_path();
+    Ok(path.into())
 }
 
 pub struct Env {
